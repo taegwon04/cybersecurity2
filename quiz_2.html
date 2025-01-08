@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스미싱 사례 퀴즈</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #5a4b81);
+            color: #ffffff;
+        }
+        #quiz-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        #quiz-container h1 {
+            font-size: 2em;
+            color: #9c27b0;
+            text-shadow: 0 0 5px #9c27b0, 0 0 10px #7b1fa2;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .choices {
+            margin-top: 20px;
+        }
+        .choices button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+            color: white;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(155, 89, 182, 0.5);
+        }
+        .choices button:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.8);
+        }
+        #feedback {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>스미싱 문자 판별 1</h1>
+        <div class="image-container">
+            <img src="smishing2.jpg" alt="스미싱 문자 판별">
+        </div>
+        <p>위 메시지를 받았다면, 어떻게 하시겠습니까?</p>
+        <div class="choices">
+            <button onclick="checkAnswer1('wrong')">해도 된다고 문자를 보낸다</button>
+            <button onclick="checkAnswer1('correct')">잠시 기다려보라 하고 정말 자녀가 보낸 문자가 맞는지 의심한다</button>
+        </div>
+        <div id="feedback"></div>
+    </div>
+
+    <script>
+        function checkAnswer1(answer) {
+            const feedback = document.getElementById('feedback');
+            if (answer === 'correct') {
+                feedback.innerHTML = "정답입니다! 스미싱인지 확인하고 신중히 행동하세요.<br> 다음 문제로 넘어갑니다. ";
+                feedback.style.color = "#4caf50";
+                setTimeout(() => loadSecondQuiz(), 2000); // 2초 후 두 번째 문제로 이동
+            } else {
+                feedback.textContent = "오답입니다! 스미싱일 수 있으니 반드시 확인해야 합니다.";
+                feedback.style.color = "#ff5722";
+            }
+        }
+
+        function loadSecondQuiz() {
+            document.getElementById('quiz-container').innerHTML = `
+                <h1>스미싱 문자 판별 2</h1>
+                <div class="image-container">
+                    <img src="smishing2.png" alt="스미싱 문자 사례">
+                </div>
+                <p>택배를 시킨 적이 없는 상황에서 위와 같은 메시지를 받았다면, <br>어떻게 하시겠습니까?</p>
+                <div class="choices">
+                    <button onclick="checkAnswer2('wrong')">클릭한다</button>
+                    <button onclick="checkAnswer2('correct')">무시하고 차단하거나, 신고한다</button>
+                </div>
+                <div id="feedback2"></div>
+            `;
+        }
+
+        function checkAnswer2(answer) {
+            const feedback = document.getElementById('feedback2');
+            if (answer === 'correct') {
+                feedback.innerHTML = "해커로부터 데이터를 지켜냈습니다! 스미싱 문자일 가능성이 높으니 항상 조심~<br> 다음 장소로 이동해주세요 :) ";
+                feedback.style.color = "#4caf50";
+            } else {
+                feedback.textContent = "오답입니다! 링크 클릭은 위험할 수 있습니다. 꼭 주의하세요.";
+                feedback.style.color = "#ff5722";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스미싱 방지 학습 - 대처 방법</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #5a4b81);
+            color: #ffffff;
+        }
+        #content {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 70%;
+            max-width: 800px;
+        }
+        #content h1 {
+            font-size: 2.5em;
+            color: #9c27b0;
+            text-shadow: 0 0 5px #9c27b0, 0 0 10px #7b1fa2;
+            margin-bottom: 20px;
+        }
+        #content img.example-image {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1px;
+        }
+        #content .image-caption {
+            font-size: 0.9em;
+            color: #ffccff;
+            margin-bottom: 1px;
+        }
+        .textbox {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            text-align: left;
+            font-size: 1.2em;
+        }
+        .textbox ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .textbox li {
+            margin: 10px 0;
+        }
+        #content button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(155, 89, 182, 0.5);
+        }
+        #content button:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>해커로부터 데이터를 지켜라! - 3</h1>
+        <img src="smishing1.png" alt="스미싱 사례" class="example-image">
+        <p class="image-caption">스미싱 사례</p>
+        <p>
+            스미싱 메시지나 이메일을 받았을 때, 아래 방법으로 대처할 수 있습니다:
+        </p>
+        <div class="textbox">
+            <strong>스미싱 대처 방법:</strong>
+            <ul>
+                <li>1. 의심스러운 링크는 절대 클릭하지 마세요.</li>
+                <li>2. URL 검증 도구(예: <a href="https://www.virustotal.com" target="_blank">VirusTotal</a>)를 활용해 안전 여부를 확인하세요.</li>
+                <li>3. 출처가 확인되지 않은 앱은 설치하지 마세요.</li>
+                <li>4. 의심스러운 문자나 이메일은 가까운 지인이나 전문가와 상담하세요.</li>
+            </ul>
+        </div>
+        <button onclick="goToNext()">다음</button>
+    </div>
+
+    <script>
+        function goToNext() {
+            location.href = "quiz_2.html"; // 세 번째 페이지로 이동
+        }
+    </script>
+</body>
+</html>
