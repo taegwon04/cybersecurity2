@@ -6,15 +6,20 @@
     <title>스미싱 방지 학습 - 대처 방법</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background: linear-gradient(135deg, #1f1c2c, #5a4b81);
             color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 상단 정렬 */
+            min-height: 100vh; /* 화면 높이 사용 */
+            padding: 20px; /* 화면 여백 */
+            box-sizing: border-box;
+            overflow-y: auto; /* 스크롤 허용 */
         }
         #content {
             text-align: center;
@@ -36,12 +41,12 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            margin-bottom: 1px;
+            margin-bottom: 10px;
         }
         #content .image-caption {
             font-size: 0.9em;
             color: #ffccff;
-            margin-bottom: 1px;
+            margin-bottom: 20px;
         }
         .textbox {
             background: rgba(255, 255, 255, 0.2);
@@ -77,23 +82,25 @@
     </style>
 </head>
 <body>
-    <div id="content">
-        <h1>해커로부터 데이터를 지켜라! - 3</h1>
-        <img src="smishing1.png" alt="스미싱 사례" class="example-image">
-        <p class="image-caption">스미싱 사례</p>
-        <p>
-            스미싱 메시지나 이메일을 받았을 때, 아래 방법으로 대처할 수 있습니다:
-        </p>
-        <div class="textbox">
-            <strong>스미싱 대처 방법:</strong>
-            <ul>
-                <li>1. 의심스러운 링크는 절대 클릭하지 마세요.</li>
-                <li>2. URL 검증 도구(예: <a href="https://www.virustotal.com" target="_blank">VirusTotal</a>)를 활용해 안전 여부를 확인하세요.</li>
-                <li>3. 출처가 확인되지 않은 앱은 설치하지 마세요.</li>
-                <li>4. 의심스러운 문자나 이메일은 가까운 지인이나 전문가와 상담하세요.</li>
-            </ul>
+    <div id="wrapper">
+        <div id="content">
+            <h1>해커로부터 데이터를 지켜라! - 3</h1>
+            <img src="smishing1.png" alt="스미싱 사례" class="example-image">
+            <p class="image-caption">스미싱 사례</p>
+            <p>
+                스미싱 메시지나 이메일을 받았을 때, 아래 방법으로 대처할 수 있습니다:
+            </p>
+            <div class="textbox">
+                <strong>스미싱 대처 방법:</strong>
+                <ul>
+                    <li>1. 의심스러운 링크는 절대 클릭하지 마세요.</li>
+                    <li>2. URL 검증 도구(예: <a href="https://www.virustotal.com" target="_blank">VirusTotal</a>)를 활용해 안전 여부를 확인하세요.</li>
+                    <li>3. 출처가 확인되지 않은 앱은 설치하지 마세요.</li>
+                    <li>4. 의심스러운 문자나 이메일은 가까운 지인이나 전문가와 상담하세요.</li>
+                </ul>
+            </div>
+            <button onclick="goToNext()">다음</button>
         </div>
-        <button onclick="goToNext()">다음</button>
     </div>
 
     <script>
