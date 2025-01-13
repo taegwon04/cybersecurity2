@@ -6,15 +6,20 @@
     <title>스미싱 사례 퀴즈</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background: linear-gradient(135deg, #1f1c2c, #5a4b81);
             color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 상단부터 시작 */
+            min-height: 100vh; /* 화면 높이 사용 */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* 스크롤 가능 */
         }
         #quiz-container {
             background: rgba(255, 255, 255, 0.1);
@@ -64,17 +69,19 @@
     </style>
 </head>
 <body>
-    <div id="quiz-container">
-        <h1>스미싱 문자 판별 1</h1>
-        <div class="image-container">
-            <img src="smishing2.jpg" alt="스미싱 문자 판별">
+    <div id="wrapper">
+        <div id="quiz-container">
+            <h1>스미싱 문자 판별 1</h1>
+            <div class="image-container">
+                <img src="smishing2.jpg" alt="스미싱 문자 판별">
+            </div>
+            <p>위 메시지를 받았다면, 어떻게 하시겠습니까?</p>
+            <div class="choices">
+                <button onclick="checkAnswer1('wrong')">해도 된다고 문자를 보낸다</button>
+                <button onclick="checkAnswer1('correct')">잠시 기다려보라 하고 정말 자녀가 보낸 문자가 맞는지 의심한다</button>
+            </div>
+            <div id="feedback"></div>
         </div>
-        <p>위 메시지를 받았다면, 어떻게 하시겠습니까?</p>
-        <div class="choices">
-            <button onclick="checkAnswer1('wrong')">해도 된다고 문자를 보낸다</button>
-            <button onclick="checkAnswer1('correct')">잠시 기다려보라 하고 정말 자녀가 보낸 문자가 맞는지 의심한다</button>
-        </div>
-        <div id="feedback"></div>
     </div>
 
     <script>
